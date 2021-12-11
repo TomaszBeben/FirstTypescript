@@ -36,26 +36,28 @@ type ListComponentsProps = {
 // }
 
 const App = () => {
-  // const url: string = 'https://jsonplaceholder.typicode.com/users';
-  useEffect(() => {
-    const fetchData = async () => {
-      axios({
-        method: 'GET',
-        url: 'https://jsonplaceholder.typicode.com/users',
-      }).then(res => {
-        console.log(res.data);
-      }).catch(e => {
-        console.error(e.message);
-      })
-    }
-    fetchData()
-  }, []);
+
+  const [users, setUsers] = useState<ListComponentsProps>()
+  // // const url: string = 'https://jsonplaceholder.typicode.com/users';
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     axios({
+  //       method: 'GET',
+  //       url: 'https://jsonplaceholder.typicode.com/users',
+  //     }).then(res => {
+  //       setUsers(res.data)
+  //     }).catch(e => {
+  //       console.error(e.message);
+  //     })
+  //   }
+  // }, [])
+
 
   return (
     <div className='App'>
       <Header />
       <SearchBar />
-      <List />
+      <List users={users} />
     </div>
   );
 }

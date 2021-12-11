@@ -1,5 +1,4 @@
 {
-    "javascript.validate.enable": false,
     "name": "task",
     "version": "0.1.0",
     "private": true,
@@ -25,6 +24,7 @@
         "eject": "react-scripts eject"
     },
     "eslintConfig": {
+        "javascript.validate.enable": false,
         "extends": [
             "react-app",
             "react-app/jest"

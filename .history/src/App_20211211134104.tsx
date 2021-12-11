@@ -48,8 +48,8 @@ const App = () => {
         console.error(e.message);
       })
     }
-    fetchData()
   }, []);
+  fetchData();
 
   return (
     <div className='App'>

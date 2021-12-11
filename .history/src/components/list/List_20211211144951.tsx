@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import { TIMEOUT } from 'dns';
 
 type Posts = {
     id: number;
@@ -12,11 +11,11 @@ const defaultPosts: Posts[] = [];
 const List = () => {
     const [posts, setPosts]: [Posts[], (posts: Posts[]) => void] = useState(defaultPosts);
     const [loading, setLoading]: [boolean, (loading: boolean) => void] = useState < boolean > (true);
-    const [error, setError]: [string, (error: string) => void] = useState('');
+    const [error, setError]: [string, (error: string) => void] = useState("");
 
     useEffect(() => {
         axios
-        .get<Posts[]>('https://jsonplaceholder.typicode.com/users')
+        .get<Posts[]>('https://jsonplaceholder.typicode.com/use')
         .then(res => {
             setPosts(res.data);
             setLoading(false);
@@ -43,7 +42,7 @@ const List = () => {
                 </li>
             ))}
         </ul>
-        {error && <p style={{color:'red'}}>{error}</p>}
+        {error && <p className="error">{error}</p>}
         </div>
     )
 };

@@ -43,13 +43,14 @@ const App = () => {
         method: 'GET',
         url: 'https://jsonplaceholder.typicode.com/users',
       }).then(res => {
-        console.log(res.data);
+        setUsers(res.data)
+        console.log(users);
       }).catch(e => {
         console.error(e.message);
       })
     }
-    fetchData()
-  }, []);
+  }, [])
+
 
   return (
     <div className='App'>

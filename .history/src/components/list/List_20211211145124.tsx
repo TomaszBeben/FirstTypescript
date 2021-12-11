@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import { TIMEOUT } from 'dns';
 
 type Posts = {
     id: number;
@@ -12,7 +11,7 @@ const defaultPosts: Posts[] = [];
 const List = () => {
     const [posts, setPosts]: [Posts[], (posts: Posts[]) => void] = useState(defaultPosts);
     const [loading, setLoading]: [boolean, (loading: boolean) => void] = useState < boolean > (true);
-    const [error, setError]: [string, (error: string) => void] = useState('');
+    const [error, setError]: [string, (error: string) => void] = useState("error");
 
     useEffect(() => {
         axios

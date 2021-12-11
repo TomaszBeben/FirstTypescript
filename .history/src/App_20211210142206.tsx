@@ -36,6 +36,8 @@ type ListComponentsProps = {
 // }
 
 const App = () => {
+
+  const [users, setUsers] = useState<ListComponentsProps>([])
   // const url: string = 'https://jsonplaceholder.typicode.com/users';
   useEffect(() => {
     const fetchData = async () => {
@@ -43,13 +45,14 @@ const App = () => {
         method: 'GET',
         url: 'https://jsonplaceholder.typicode.com/users',
       }).then(res => {
-        console.log(res.data);
+        setUsers(res.data)
+        console.log(users);
       }).catch(e => {
         console.error(e.message);
       })
     }
-    fetchData()
-  }, []);
+  }, [])
+
 
   return (
     <div className='App'>

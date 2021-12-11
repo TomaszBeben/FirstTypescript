@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import { TIMEOUT } from 'dns';
 
 type Posts = {
     id: number;
@@ -16,7 +15,7 @@ const List = () => {
 
     useEffect(() => {
         axios
-        .get<Posts[]>('https://jsonplaceholder.typicode.com/users')
+        .get<Posts[]>('https://sonplaceholder.typicode.com/users')
         .then(res => {
             setPosts(res.data);
             setLoading(false);

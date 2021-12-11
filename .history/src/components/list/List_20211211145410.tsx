@@ -16,7 +16,7 @@ const List = () => {
 
     useEffect(() => {
         axios
-        .get<Posts[]>('https://jsonplaceholder.typicode.com/users')
+        .get<Posts[]>('https://jsonplaceholder.typicode.com/users',{},TIMEOUT)
         .then(res => {
             setPosts(res.data);
             setLoading(false);

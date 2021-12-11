@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
-import { TIMEOUT } from 'dns';
 
 type Posts = {
     id: number;
@@ -12,7 +11,7 @@ const defaultPosts: Posts[] = [];
 const List = () => {
     const [posts, setPosts]: [Posts[], (posts: Posts[]) => void] = useState(defaultPosts);
     const [loading, setLoading]: [boolean, (loading: boolean) => void] = useState < boolean > (true);
-    const [error, setError]: [string, (error: string) => void] = useState('');
+    const [error, setError]: [string, (error: string) => void] = useState("");
 
     useEffect(() => {
         axios
@@ -33,7 +32,6 @@ const List = () => {
     console.log(posts);
 
     return (
-        <div>
         <ul>
             {posts.map((elem, key) => (
                 <li style={{ display:'flex', flexDirection:'row' }} key={elem.id}>
@@ -43,8 +41,6 @@ const List = () => {
                 </li>
             ))}
         </ul>
-        {error && <p style={{color:'red'}}>{error}</p>}
-        </div>
     )
 };
 
