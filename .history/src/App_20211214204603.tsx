@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import Header from './components/header/Header';
 import SearchBar from './components/searchBar/SearchBar';
@@ -10,8 +10,7 @@ const defaultPosts: TPosts[] = [];
 
 const App = () => {
   const [posts, setPosts]: [TPosts[], (posts: TPosts[]) => void] = useState(defaultPosts);
-  const [loading, setLoading]: [boolean, (loading: boolean) => void] = useState < boolean > (true);
-  const [error, setError]: [string, (error: string) => void] = useState('');
+
 
 
   useEffect(() => {
@@ -22,7 +21,7 @@ const App = () => {
     <div className='App'>
       <Header />
       <SearchBar />
-      <List posts={ posts } error={error} />
+      <List />
     </div>
   );
 }

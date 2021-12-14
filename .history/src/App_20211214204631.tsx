@@ -22,7 +22,7 @@ const App = () => {
     <div className='App'>
       <Header />
       <SearchBar />
-      <List posts={ posts } error={error} />
+      <List />
     </div>
   );
 }
