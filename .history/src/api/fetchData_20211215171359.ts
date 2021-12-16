@@ -2,8 +2,8 @@ import axios from 'axios';
 
 export type TPosts = {
     id: number;
-    name: string;
-    username: string;
+    name: String;
+    username: String;
 };
 
 const URL: string = 'https://jsonplaceholder.typicode.com/users';

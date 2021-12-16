@@ -2,8 +2,8 @@ import axios from 'axios';
 
 export type TPosts = {
     id: number;
-    name: string;
-    username: string;
+    name: String;
+    username: String;
 };
 
 const URL: string = 'https://jsonplaceholder.typicode.com/users';
@@ -12,7 +12,6 @@ export const fetchData = (setPosts: (arg0: TPosts[]) => void, setLoading: (arg0:
     axios
         .get<TPosts[]>(URL)
         .then(res => {
-            console.log(res);
             setPosts(res.data);
             setLoading(false);
         })

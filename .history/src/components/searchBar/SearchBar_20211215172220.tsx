@@ -1,15 +1,13 @@
 import React, { FC } from 'react'
 
 type TSearchBar = {
-    search?: string;
+    search: string;
     setSearch: (search: string) => void;
 }
 
 const SearchBar: FC<TSearchBar> = ({search, setSearch}) => {
-    console.log(search);
-
     return (
-        <input type="text" onChange={event => setSearch(event.target.value)} />
+        <input type="text" />
     )
 }
 

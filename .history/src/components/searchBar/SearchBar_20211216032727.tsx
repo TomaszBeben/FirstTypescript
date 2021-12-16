@@ -1,7 +1,7 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 
 type TSearchBar = {
-    search?: string;
+    search: string;
     setSearch: (search: string) => void;
 }
 

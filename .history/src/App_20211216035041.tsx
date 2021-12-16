@@ -21,15 +21,12 @@ const App = () => {
   useEffect(() => {
     posts.filter(elem => {
       if(search === '') {
-        return elem
-      }else if (elem.name.toLowerCase().includes(search.toLowerCase())){
-        return elem
-      }
-      setPosts(elem)
+        return elem;
+      }else if (elem.name.toLowerCase)
     })
-  },[posts, search])
+  })
 
-//Type 'TPosts' is missing the following properties from type 'TPosts[]': length, pop, push, concat, and 28 more.  TS2345
+
   return (
     <div className='App'>
       <Header />
