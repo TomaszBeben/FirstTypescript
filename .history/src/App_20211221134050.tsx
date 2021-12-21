@@ -9,6 +9,11 @@ type TUser = {
   id: number,
   name: string,
   username: string,
+  // email: string,
+  // address: object,
+  // phone: string,
+  // website: string,
+  // company: string,
 }
 
 const defaultState: TUser[] = [];
@@ -43,7 +48,7 @@ const App: FC = () => {
           return elem
         }else if (elem.name.toLowerCase().includes(search.toLowerCase())){
           return elem
-        }return false
+        }
       }).map((elem) => {
         return (
           <ul key={elem.id}>

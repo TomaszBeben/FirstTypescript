@@ -9,6 +9,11 @@ type TUser = {
   id: number,
   name: string,
   username: string,
+  // email: string,
+  // address: object,
+  // phone: string,
+  // website: string,
+  // company: string,
 }
 
 const defaultState: TUser[] = [];
@@ -32,19 +37,14 @@ const App: FC = () => {
         : setError('')
       })
   }, [])
+
   return (
     <div className='App'>
       <Header />
       {/* <Search /> */}
       <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
       {search}
-      {users.filter((elem: TUser) => {
-        if(search === ''){
-          return elem
-        }else if (elem.name.toLowerCase().includes(search.toLowerCase())){
-          return elem
-        }return false
-      }).map((elem) => {
+      {users.filter(elem).map((elem) => {
         return (
           <ul key={elem.id}>
             <li>

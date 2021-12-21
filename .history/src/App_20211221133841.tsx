@@ -9,6 +9,11 @@ type TUser = {
   id: number,
   name: string,
   username: string,
+  // email: string,
+  // address: object,
+  // phone: string,
+  // website: string,
+  // company: string,
 }
 
 const defaultState: TUser[] = [];
@@ -32,6 +37,7 @@ const App: FC = () => {
         : setError('')
       })
   }, [])
+//filter(predicate: (value: T, index: number, array: T[]) => unknown, thisArg?: any): T[]
   return (
     <div className='App'>
       <Header />
