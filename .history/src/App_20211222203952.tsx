@@ -30,9 +30,7 @@ const App = () => {
           return elem
         }
         return false
-
-        // if should be a function which return value (? with arg elem?)
-
+        // if should be a function which return value
       }).map((elem) => {
         return (
           <ul key={elem.id}>

@@ -18,7 +18,7 @@ const App = () => {
   useEffect(() => {
     fetchData(setUsers, setError);
   }, [])
-
+  
   return (
     <div className='App'>
       <Header />
@@ -30,9 +30,6 @@ const App = () => {
           return elem
         }
         return false
-
-        // if should be a function which return value (? with arg elem?)
-
       }).map((elem) => {
         return (
           <ul key={elem.id}>
