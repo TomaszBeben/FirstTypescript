@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Dispatch, SetStateAction } from 'react'
+import React, { FC, useState, useEffect, Dispatch, SetStateAction } from 'react'
 import { fetchData } from './api/fetchData'
 
 import Header from './components/header/Header'

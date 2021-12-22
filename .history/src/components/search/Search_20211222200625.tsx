@@ -1,11 +1,11 @@
-import React, { FC, Dispatch, SetStateAction } from 'react'
+import React, { FC } from 'react'
 
-type props = {
+type Props = {
     search: string,
-    setSearch: Dispatch<SetStateAction<string>>
+    setSearch: 
 }
 
-const Search: FC<props> = ({search, setSearch}) => {
+const Search: FC = ({search, setSearch}) => {
     return (
         <>
             <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
