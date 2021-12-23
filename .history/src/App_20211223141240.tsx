@@ -14,63 +14,49 @@ const App = () => {
   const defaultState: TUser[] = [];
   const [users, setUsers] = useState < TUser[] > (defaultState)
   const [error, setError] = useState < string > ('')
-  const [search, setSearch]: [string, Dispatch<SetStateAction<string>>] = useState ('')
+  const [search, setSearch]: [string, Dispatch<SetStateAction<string>>] = useState('')
 
   useEffect(() => {
     fetchData(setUsers, setError);
   }, [])
 
-  const filterUser = (search: string, elem: TUser) => {
-    if(search === ''){
-      return elem
-    }else if(elem.name.toLowerCase().includes(search.toLowerCase())){
-      return elem
-    }
-  }
-
-
-//          helpful note:
-// https://www.emgoto.com/react-search-bar/
-
-//   const filterPosts = (posts, query) => {
-//     if (!query) {
-//         return posts;
-//     }
-
-//     return posts.filter((post) => {
-//         const postName = post.name.toLowerCase();
-//         return postName.includes(query);
-//     });
-// };
-
-
+  // const filterCondition = (search: string, elem: TUser) => {
+  //   if(search === ''){
+  //     return elem.filter()
+  //   }
+  // }
 
   return (
     <div className='App'>
       <Header />
       <Search search={search} setSearch={setSearch} />
       {users.filter((elem: TUser) => {
-        console.log(search === '');
+        return {
+          console.log(search === '');
           console.log(elem.name.toLowerCase().includes(search.toLowerCase()));
-        if(search === ''){
-          return elem
-        }else if (elem.name.toLowerCase().includes(search.toLowerCase())){
-          return elem
+          if(search === ''){
+        elem
+      }else if (elem.name.toLowerCase().includes(search.toLowerCase())){
+        elem
+      }
         }
-        return false
+
+
+
+        // return false
 
         // if should be a function which return value (? with arg elem?)
 
       }).map((elem) => {
         return (
-          <ul key={elem.id}>
-            <li>
-              <p>{elem.id}</p>
-              <p>{elem.name}</p>
-              <p>{elem.username}</p>
-            </li>
-          </ul>
-        )
+      <ul key={elem.id}>
+        <li>
+          <p>{elem.id}</p>
+          <p>{elem.name}</p>
+          <p>{elem.username}</p>
+        </li>
+      </ul>
+      )
       })
       }
       {error}

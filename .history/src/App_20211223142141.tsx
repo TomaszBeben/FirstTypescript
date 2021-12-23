@@ -28,23 +28,6 @@ const App = () => {
     }
   }
 
-
-//          helpful note:
-// https://www.emgoto.com/react-search-bar/
-
-//   const filterPosts = (posts, query) => {
-//     if (!query) {
-//         return posts;
-//     }
-
-//     return posts.filter((post) => {
-//         const postName = post.name.toLowerCase();
-//         return postName.includes(query);
-//     });
-// };
-
-
-
   return (
     <div className='App'>
       <Header />

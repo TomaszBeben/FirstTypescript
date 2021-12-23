@@ -10,7 +10,6 @@ import { TUser } from './types/TUser'
 
 
 const App = () => {
-
   const defaultState: TUser[] = [];
   const [users, setUsers] = useState < TUser[] > (defaultState)
   const [error, setError] = useState < string > ('')
@@ -20,38 +19,11 @@ const App = () => {
     fetchData(setUsers, setError);
   }, [])
 
-  const filterUser = (search: string, elem: TUser) => {
-    if(search === ''){
-      return elem
-    }else if(elem.name.toLowerCase().includes(search.toLowerCase())){
-      return elem
-    }
-  }
-
-
-//          helpful note:
-// https://www.emgoto.com/react-search-bar/
-
-//   const filterPosts = (posts, query) => {
-//     if (!query) {
-//         return posts;
-//     }
-
-//     return posts.filter((post) => {
-//         const postName = post.name.toLowerCase();
-//         return postName.includes(query);
-//     });
-// };
-
-
-
   return (
     <div className='App'>
       <Header />
       <Search search={search} setSearch={setSearch} />
       {users.filter((elem: TUser) => {
-        console.log(search === '');
-          console.log(elem.name.toLowerCase().includes(search.toLowerCase()));
         if(search === ''){
           return elem
         }else if (elem.name.toLowerCase().includes(search.toLowerCase())){
@@ -73,7 +45,7 @@ const App = () => {
         )
       })
       }
-      {error}
+      {error} 
       {/* should shows 'string' */}
     </div>
   )

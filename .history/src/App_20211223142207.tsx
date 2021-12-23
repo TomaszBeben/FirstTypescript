@@ -27,11 +27,8 @@ const App = () => {
       return elem
     }
   }
-
-
-//          helpful note:
-// https://www.emgoto.com/react-search-bar/
-
+// heplfull note:
+//
 //   const filterPosts = (posts, query) => {
 //     if (!query) {
 //         return posts;
@@ -42,8 +39,6 @@ const App = () => {
 //         return postName.includes(query);
 //     });
 // };
-
-
 
   return (
     <div className='App'>

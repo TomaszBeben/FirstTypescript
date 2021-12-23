@@ -20,30 +20,11 @@ const App = () => {
     fetchData(setUsers, setError);
   }, [])
 
-  const filterUser = (search: string, elem: TUser) => {
-    if(search === ''){
-      return elem
-    }else if(elem.name.toLowerCase().includes(search.toLowerCase())){
-      return elem
-    }
-  }
-
-
-//          helpful note:
-// https://www.emgoto.com/react-search-bar/
-
-//   const filterPosts = (posts, query) => {
-//     if (!query) {
-//         return posts;
-//     }
-
-//     return posts.filter((post) => {
-//         const postName = post.name.toLowerCase();
-//         return postName.includes(query);
-//     });
-// };
-
-
+  // const filterCondition = (search: string, elem: TUser) => {
+  //   if(search === ''){
+  //     return elem.filter()
+  //   }
+  // }
 
   return (
     <div className='App'>
@@ -56,6 +37,9 @@ const App = () => {
           return elem
         }else if (elem.name.toLowerCase().includes(search.toLowerCase())){
           return elem
+        }else if(!search === '' && !elem.name.toLowerCase().includes(search.toLowerCase())){
+          
+          setError('fseessds')
         }
         return false
 
